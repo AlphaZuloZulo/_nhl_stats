@@ -38,6 +38,5 @@ for row in rows:
     name = data['Name']
     if name in nameList:
         builder.append(data)
-        else continue
     
 scraperwiki.sqlite.save(table_name='score', data=builder, unique_keys=['Name'])
