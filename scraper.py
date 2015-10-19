@@ -33,6 +33,6 @@ for row in rows:
     for i,n in enumerate(num):
         data[lookup[i]]=duckint(cells[n])
     #data['W']=duckint(row.xpath('descendant-or-self::span[@class="yspscores"]')[0].text_content().strip())
-    #builder.append(data)
+    builder.append(data)
     
 scraperwiki.sqlite.save(table_name='score', data=builder, unique_keys=['Name'])
