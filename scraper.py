@@ -10,8 +10,8 @@ def duckint(i):
         return i
 
 # Blank Python
-lookup = ['Name','Team','GP','GS','MIN','L','OTL','EGA','GA','GAA','SA','SV','SVP','SO']
-num =    [0,1,2,4,6,9,11,13,15,17,19,21,23,26]
+lookup = ['Name','Team','GP','GS','MIN','W','L','OTL','EGA','GA','GAA','SA','SV','SVP','SO']
+num =    [0,1,2,4,6,8,10,12,14,16,18,20,22,24,26]
 
 lstring = ', '.join(lookup)
 
