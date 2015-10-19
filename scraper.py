@@ -13,6 +13,8 @@ def duckint(i):
 lookup = ['Name','Team','GP','GS','MIN','W','L','OTL','EGA','GA','GAA','SA','SV','SVP','SO']
 num =    [0,1,2,4,6,8,10,12,14,16,18,20,22,24,26]
 
+nameList = ['Chad Johnson','Jonas Gustavsson']
+
 lstring = ', '.join(lookup)
 
 scraperwiki.sqlite.execute('create table if not exists score (%s)'%lstring)
@@ -33,6 +35,7 @@ for row in rows:
     for i,n in enumerate(num):
         data[lookup[i]]=duckint(cells[n])
     #data['W']=duckint(row.xpath('descendant-or-self::span[@class="yspscores"]')[0].text_content().strip())
-    builder.append(data)
+    if data[0] in nameList:
+        builder.append(data)
     
 scraperwiki.sqlite.save(table_name='score', data=builder, unique_keys=['Name'])
