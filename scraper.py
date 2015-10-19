@@ -11,7 +11,7 @@ def duckint(i):
 
 # Blank Python
 lookup = ['Name','Team','GP','GS','MIN','W','L','OTL','EGA','GA','GAA','SA','SV','SVP','SO']
-num =    [0,1,2,4,6,3,9,11,13,15,17,19,21,23,25]
+num =    [0,1,2,4,6,8,9,11,13,15,17,19,21,23,25]
 
 lstring = ', '.join(lookup)
 
@@ -19,7 +19,8 @@ scraperwiki.sqlite.execute('create table if not exists score (%s)'%lstring)
 
 #url='http://sports.yahoo.com/nhl/stats/byposition?pos=D'
 #url='http://sports.yahoo.com/nhl/stats/byposition?pos=D&conference=NHL&year=season_2015&qualified=1'
-url='http://sports.yahoo.com/nhl/stats/byposition?pos=G&conference=NHL&year=season_2015&qualified=1'
+#url='http://sports.yahoo.com/nhl/stats/byposition?pos=G&conference=NHL&year=season_2015&qualified=1'
+url='http://sports.yahoo.com/nhl/stats/byposition?pos=G&conference=NHL&year=season_2015&qualified=1&sort=LAST_NAME'
 
 html=requests.get(url).content
 root=lxml.html.fromstring(html)
